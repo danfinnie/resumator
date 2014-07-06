@@ -2,7 +2,7 @@
   window.resume_id = <%= @resume.id %>;
 </script>
 
-<div class="row">
+<div class="row full-size">
   <div ng-controller="ResumeUpdaterController" class="one third padded">
     <div class="row">
       <div class="one half">
@@ -51,9 +51,9 @@
     </div>
   </div>
 
-  <div ng-controller="ResumePdfViewerController" class="one third padded">
-    <object data="{{ pdfUrl }}" type="application/pdf" width="100%" height="100%">
-      <embed src="{{ pdfUrl }}" type="application/pdf" width="100%" height="100%" />
+  <div ng-controller="ResumePdfViewerController" class="one third full-size">
+    <object data="{{ pdfUrl }}" type="application/pdf" class="full-size">
+      <embed src="{{ pdfUrl }}" type="application/pdf" class="full-size"/>
     </object>
   </div>
 </div>
