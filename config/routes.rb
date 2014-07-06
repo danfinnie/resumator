@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :jobs
   resources :educations
 
-  resources :resumes, only: :new
+  resources :resumes, only: [:new, :edit, :show, :update]
 end
