@@ -1,4 +1,5 @@
 Job.delete_all
+Education.delete_all
 
 Job.create!(started: '05 Nov 2012', ended: '05 Jul 2013', title: "Full Stack Web Developer", place: "Noise New York", description: <<-EOT)
   * Implement browser-based video chatting and appointment scheduling,
@@ -21,4 +22,15 @@ Job.create!(started: '05 Jan 2010', ended: '05 Dec 2012', title: "Web Developer"
   Drupal content management system.
   * Integrate sites with University systems to access user and course data
   using LDAP and custom integrations.
+EOT
+
+Education.create!(obtained_at: '05 Dec 2012', place: 'Lehigh University', gpa: '3.7', title: 'Joint B.S. in Computer Science & Business', description: <<-EOT)
+  * Developed long-term mobility strategy for Fortune 500 medical products
+  manufacturer as part of senior project
+  * Determined current IT leaders. levels of investment in utility computing
+  through analysis of financial statements, government filings, and product
+  offerings. Presented findings to project sponsor, a "stealth-mode" startup.
+  * Created a written business loan proposal targeted at area lending
+  institutions with business executives and other students, personally
+  researched and wrote a competitive analysis and operating plan
 EOT
