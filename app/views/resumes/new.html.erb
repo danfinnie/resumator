@@ -1,7 +1,18 @@
 <div ng-controller="JobsController">
+  <h1>Jobs</h1>
   <ul>
     <li ng-repeat="job in jobs">
-    {{ job.title }} at {{ job.place }}
+      <label>
+        <input type="checkbox" ng-model="job.selected" />
+        {{ job.title }} at {{ job.place }}
+    </label>
     </li>
   </ul>
+
+  <h1>Resume</h1>
+  <div ng-repeat="job in selected_jobs">
+    <h2>{{ job.title }} at {{ job.place }}</h2>
+    <h3>{{ job.started | date:'MMMM yyyy' }} &mdash; {{ job.ended | date:'MMMM yyyy' }}</h3>
+    <div ng-bind-html="job.description.html"></div>
+  </div>
 </div>
