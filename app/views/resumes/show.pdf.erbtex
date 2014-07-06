@@ -1,0 +1,19 @@
+\documentclass{article}
+\begin{document}
+\section{Education}
+<% @resume.educations.each do |education| %>
+  <%= lesc(education.title) %>
+  <%= lesc(education.place) %>
+  <%= lesc(education.gpa) %>
+  <%= lesc(education.obtained_at) %>
+  <%= lesc(education.description) %>
+<% end %>
+\section{Experience}
+<% @resume.jobs.each do |job| %>
+  <%= lesc(job.title) %>
+  <%= lesc(job.place) %>
+  <%= lesc(job.started) %>
+  <%= lesc(job.ended) %>
+  <%= lesc(job.description) %>
+<% end %>
+\end{document}

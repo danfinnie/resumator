@@ -1,4 +1,4 @@
-resumator.controller('ResumeViewerController', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
+resumator.controller('ResumeHtmlViewerController', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
   function trustDescriptionHtml(ary) {
     angular.forEach(ary, function(item) {
       item.description.html = $sce.trustAsHtml(item.description.html);

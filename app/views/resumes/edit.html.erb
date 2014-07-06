@@ -3,7 +3,7 @@
 </script>
 
 <div class="row">
-  <div ng-controller="ResumeUpdaterController" class="one half padded">
+  <div ng-controller="ResumeUpdaterController" class="one third padded">
     <div class="row">
       <div class="one half">
         <h1><input type="text" ng-model="resume.name" ng-change="updateServer()" /></h1>
@@ -30,7 +30,7 @@
     </ul>
   </div>
 
-  <div ng-controller="ResumeViewerController" class="one half padded">
+  <div ng-controller="ResumeHtmlViewerController" class="one third padded">
     <h1>Resume</h1>
     <div ng-if='educations.length > 0'>
       <h2>Education</h2>
@@ -49,5 +49,11 @@
         <div ng-bind-html="job.description.html"></div>
       </div>
     </div>
+  </div>
+
+  <div ng-controller="ResumePdfViewerController" class="one third padded">
+    <object data="{{ pdfUrl }}" type="application/pdf" width="100%" height="100%">
+      <embed src="{{ pdfUrl }}" type="application/pdf" width="100%" height="100%" />
+    </object>
   </div>
 </div>

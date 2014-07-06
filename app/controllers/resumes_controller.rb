@@ -12,6 +12,7 @@ class ResumesController < ApplicationController
     respond_to do |format|
       format.json { @resume = Resume.find(resume_id) }
       format.html { redirect_to edit_resume_path(resume_id) }
+      format.pdf { @resume = Resume.find(resume_id); render layout: false }
     end
   end
 
