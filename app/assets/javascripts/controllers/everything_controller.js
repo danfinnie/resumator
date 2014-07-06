@@ -1,4 +1,4 @@
-resumator.controller('JobsController', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
+resumator.controller('EverythingController', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
   $http.get('/jobs').then(function (response) {
     var jobs = response.data;
     angular.forEach(jobs, function(job) {
