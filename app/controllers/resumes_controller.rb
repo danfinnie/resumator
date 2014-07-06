@@ -1,6 +1,6 @@
 class ResumesController < ApplicationController
   def new
-    resume = Resume.create!
+    resume = Resume.create!(name: "Untitled Resume")
     redirect_to edit_resume_path(resume)
   end
 

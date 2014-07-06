@@ -4,6 +4,11 @@
 
 <div class="row">
   <div ng-controller="ResumeUpdaterController" class="one half padded">
+    <div class="row">
+      <div class="one half">
+        <h1><input type="text" ng-model="resume.name" ng-change="updateServer()" /></h1>
+      </div>
+    </div>
     <h1>Jobs</h1>
     <ul>
       <li ng-repeat="job in jobs">
