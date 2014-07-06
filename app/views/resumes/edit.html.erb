@@ -32,18 +32,22 @@
 
   <div ng-controller="ResumeViewerController" class="one half padded">
     <h1>Resume</h1>
-    <h2>Education</h2>
-    <div ng-repeat="education in educations">
-      <h3>{{ education.title }} from {{ education.place }} ({{ education.gpa }} GPA)</h3>
-      <h4>{{ education.obtained_at | date:'MMMM yyyy' }}</h4>
-      <div ng-bind-html="education.description.html"></div>
+    <div ng-if='educations.length > 0'>
+      <h2>Education</h2>
+      <div ng-repeat="education in educations">
+        <h3>{{ education.title }} from {{ education.place }} ({{ education.gpa }} GPA)</h3>
+        <h4>{{ education.obtained_at | date:'MMMM yyyy' }}</h4>
+        <div ng-bind-html="education.description.html"></div>
+      </div>
     </div>
 
-    <h2>Experience</h2>
-    <div ng-repeat="job in jobs">
-      <h3>{{ job.title }} at {{ job.place }}</h3>
-      <h4>{{ job.started | date:'MMMM yyyy' }} &mdash; {{ job.ended | date:'MMMM yyyy' }}</h4>
-      <div ng-bind-html="job.description.html"></div>
+    <div ng-if='jobs.length > 0'>
+      <h2>Experience</h2>
+      <div ng-repeat="job in jobs">
+        <h3>{{ job.title }} at {{ job.place }}</h3>
+        <h4>{{ job.started | date:'MMMM yyyy' }} &mdash; {{ job.ended | date:'MMMM yyyy' }}</h4>
+        <div ng-bind-html="job.description.html"></div>
+      </div>
     </div>
   </div>
 </div>
