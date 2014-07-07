@@ -2,5 +2,5 @@ json.extract! education, :id, :obtained_at, :title, :place, :gpa, :created_at, :
 json.url education_url(education, format: :json)
 json.description do
   json.markdown education.description
-  json.html GitHub::Markdown.render_gfm(education.description)
+  json.html Maruku.new(education.description).to_html
 end

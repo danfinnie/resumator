@@ -28,7 +28,11 @@
     <%= f.text_field :place %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :description %> (Markdown encouraged!)<br>
     <%= f.text_area :description %>
   </div>
   <div class="actions">
