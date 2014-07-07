@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/danfinnie/rails-latex.git
-  revision: aa3f9689639928a7addbd567f53c45d7ce323a58
+  revision: 627f7236e571266b93a81df387cea37654c7f97d
+  branch: both-changes
   specs:
     rails-latex (1.0.12)
       rails (>= 3.0.0)
