@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: resumator_production
-  username: resumator
-  password: <%= ENV['RESUMATOR_DATABASE_PASSWORD'] %>
+  database: <%= ENV['POSTGRESQL_DB'] %>
+  username: <%= ENV['POSTGRESQL_USER'] %>
+  password: <%= ENV['POSTGRESQL_PASS'] %>
+  host: <%= ENV['POSTGRES_1_PORT_5432_TCP_ADDR'] %>
+  port: <%= ENV['POSTGRES_1_PORT_5432_TCP_PORT'] %>
