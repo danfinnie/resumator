@@ -13,4 +13,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'angularjs-rails'
 gem 'github-markdown'
-gem 'rails-latex'
+gem 'rails-latex', github: 'danfinnie/rails-latex'
+
+group :development do
+  gem 'pry'
+end
