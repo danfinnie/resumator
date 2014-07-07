@@ -17,10 +17,18 @@ class ResumesController < ApplicationController
   end
 
   def update
-    # See https://github.com/rails/rails/issues/13420
     @resume = Resume.find(resume_id)
     @resume.update!(
       name: params[:resume][:name],
+      personal_website: params[:resume][:personal_website],
+      first_name: params[:resume][:first_name],
+      last_name: params[:resume][:last_name],
+      phone: params[:resume][:phone],
+      email: params[:resume][:email],
+
+      # See https://github.com/rails/rails/issues/13420 .
+      # Basically, the whole Array#compact thing is needed so that
+      # users can clear out the jobs/educations.
       job_ids: Array(params[:resume][:job_ids]).compact,
       education_ids: Array(params[:resume][:education_ids]).compact
     )

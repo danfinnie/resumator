@@ -1,4 +1,4 @@
-json.extract! @resume, :name, :id
+json.extract! @resume, :name, :id, :first_name, :last_name, :personal_website, :email, :phone
 json.url resume_path(@resume)
 
 json.jobs do

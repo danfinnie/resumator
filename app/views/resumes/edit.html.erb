@@ -9,6 +9,39 @@
         <h1><input type="text" ng-model="resume.name" ng-change="updateServer()" /></h1>
       </div>
     </div>
+    <h1>About you</h1>
+    <ul>
+      <li>
+      <label>
+        First name:
+        <input type="text" ng-model="resume.first_name" ng-change="updateServer()" />
+      </label>
+      </li>
+      <li>
+      <label>
+        Last name:
+        <input type="text" ng-model="resume.last_name" ng-change="updateServer()" />
+      </label>
+      </li>
+      <li>
+      <label>
+        Email:
+        <input type="text" ng-model="resume.email" ng-change="updateServer()" />
+      </label>
+      </li>
+      <li>
+      <label>
+        Personal Website:
+        <input type="text" ng-model="resume.personal_website" ng-change="updateServer()" />
+      </label>
+      </li>
+      <li>
+      <label>
+        Phone (wat is dat?):
+        <input type="text" ng-model="resume.phone" ng-change="updateServer()" />
+      </label>
+      </li>
+    </ul>
     <h1>Jobs</h1>
     <ul>
       <li ng-repeat="job in jobs">

@@ -23,6 +23,11 @@ resumator.controller('ResumeUpdaterController', ['$scope', '$http', '$rootScope'
     $http.put($scope.resume.url, {
       resume: {
         name: $scope.resume.name,
+        personal_website: $scope.resume.personal_website,
+        first_name: $scope.resume.first_name,
+        last_name: $scope.resume.last_name,
+        phone: $scope.resume.phone,
+        email: $scope.resume.email,
         job_ids: findSelectedIds($scope.jobs),
         education_ids: findSelectedIds($scope.educations)
       }

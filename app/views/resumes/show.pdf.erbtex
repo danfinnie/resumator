@@ -29,9 +29,9 @@
 
 \lastupdated % Print the Last Updated text at the top right
 
-\namesection{Debarghya}{Das}{ % Your name
-\urlstyle{same}\url{http://debarghyadas.com} \\ % Your website, LinkedIn profile or other web address
-\href{mailto:dd367@cornell.edu}{dd367@cornell.edu} | 607.379.5733 % Your contact information
+\namesection{<%= @resume.first_name %>}{<%= @resume.last_name %>}{ % Your name
+\urlstyle{same}\url{<%= @resume.personal_website %>} \\ % Your website, LinkedIn profile or other web address
+\href{mailto:<%= @resume.email %>}{<%= @resume.email %>} | <%= dotted_phone_number(@resume.phone) %> % Your contact information
 }
 
 %----------------------------------------------------------------------------------------
