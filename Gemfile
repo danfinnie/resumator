@@ -15,7 +15,12 @@ gem 'angularjs-rails'
 gem 'rails-latex', github: 'danfinnie/rails-latex', branch: 'both-changes'
 gem 'maruku'
 
-group :development do
+group :development, :test do
   gem 'pry'
-  gem 'rspec'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'spring-commands-rspec'
 end
