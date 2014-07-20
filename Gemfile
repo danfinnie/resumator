@@ -17,4 +17,5 @@ gem 'maruku'
 
 group :development do
   gem 'pry'
+  gem 'rspec'
 end
