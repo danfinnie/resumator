@@ -1,4 +1,8 @@
+require_relative 'helpers/fill_in_date'
+
 RSpec.configure do |config|
+  config.include FillInDate
+
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
 

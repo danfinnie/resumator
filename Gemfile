@@ -17,9 +17,11 @@ gem 'maruku'
 
 group :development, :test do
   gem 'pry'
+  gem 'cheat'
 end
 
 group :test do
+  gem 'simple_bdd', require: ['simple_bdd', 'simple_bdd/rspec']
   gem 'rspec-rails'
   gem 'capybara'
   gem 'spring-commands-rspec'
