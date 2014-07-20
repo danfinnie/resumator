@@ -15,9 +15,14 @@ gem 'angularjs-rails'
 gem 'rails-latex', github: 'danfinnie/rails-latex', branch: 'both-changes'
 gem 'maruku'
 
+group :development do
+  gem 'cheat'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+end
+
 group :development, :test do
   gem 'pry'
-  gem 'cheat'
 end
 
 group :test do
