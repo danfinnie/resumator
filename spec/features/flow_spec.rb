@@ -83,8 +83,22 @@ describe "creating a user with a basic profile" do
   end
 
   def i_see_a_pdf_version_of_my_resume
-    id = Resume.first.id
-    expect(page).to have_css "object[data*=resume]"
-    expect(page).to have_css "object[data*='#{id}']"
+    pdf_url = page.driver.evaluate_script('window.location.origin + $("object").attr("data")')
+    pdf_text = extract_pdf_text(pdf_url)
+
+    expect(pdf_text).to include('Chelsea Radcliffe')
+    expect(pdf_text).to include('radcliffe43.geocities.com')
+    expect(pdf_text).to include('303-555-6263')
+    # expect(pdf_text).to include('Mind Control from Lehigh University (3.5 GPA)')
+    # expect(pdf_text).to include('June 2009')
+    # expect(pdf_text).to include('The hill')
+    # expect(pdf_text).to include('Trained mind rays')
+    expect(pdf_text).to include('DEPARTMENT OF CONTROL')
+    expect(pdf_text).to include('San Bruno, CA')
+    expect(pdf_text).to include('August 2010')
+    expect(pdf_text).to include('August 2011')
+    expect(pdf_text).to include('Herded cats')
+    expect(pdf_text).to include('Pet dogs')
+    expect(pdf_text).to include('Fed dogs')
   end
 end
