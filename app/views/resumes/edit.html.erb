@@ -63,9 +63,9 @@
     </ul>
   </div>
 
-  <div ng-controller="ResumeHtmlViewerController" class="one third padded">
+  <div ng-controller="ResumeHtmlViewerController" class="one third padded resume-preview">
     <h1>Resume</h1>
-    <div ng-if='educations.length > 0'>
+    <div ng-if='educations.length > 0' class='education'>
       <h2>Education</h2>
       <div ng-repeat="education in educations">
         <h3>{{ education.title }} from {{ education.place }} ({{ education.gpa }} GPA)</h3>
@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <div ng-if='jobs.length > 0'>
+    <div ng-if='jobs.length > 0' class='experience'>
       <h2>Experience</h2>
       <div ng-repeat="job in jobs">
         <h3>{{ job.title }} at {{ job.place }}</h3>

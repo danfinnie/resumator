@@ -19,15 +19,20 @@ group :development do
   gem 'cheat'
   gem 'guard'
   gem 'guard-rspec', require: false
+  gem 'guard-bundler', require: false
 end
 
 group :development, :test do
   gem 'pry'
+  gem 'launchy'
 end
 
 group :test do
+  gem 'rspec'
   gem 'simple_bdd', require: ['simple_bdd', 'simple_bdd/rspec']
   gem 'rspec-rails'
   gem 'capybara'
   gem 'spring-commands-rspec'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
