@@ -1,0 +1,5 @@
+Todo:
+
+* Import from LinkedIn
+* Better data entry flow
+* Twitter bootstrap?
