@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
 
+  get :linkedin, to: 'pages#linkedin'
+
   resources :jobs
   resources :educations
 
