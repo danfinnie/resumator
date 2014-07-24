@@ -1,14 +1,38 @@
-resumator.controller('ResumeUpdaterController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
-  $http.get('/jobs').then(function (response) {
-    $scope.jobs = response.data;
-  });
+resumator.controller('ResumeUpdaterController', ['$scope', '$http', '$rootScope', '$q', function ($scope, $http, $rootScope, $q) {
+  var jobsPromise = $http.get('/jobs');
+  var educationsPromise = $http.get('/educations');
+  var resumePromise = $http.get('/resumes/' + window.resume_id);
 
-  $http.get('/educations').then(function (response) {
-    $scope.educations = response.data;
-  });
-
-  $http.get('/resumes/' + window.resume_id).then(function (response) {
+  resumePromise.then(function (response) {
     $scope.resume = response.data;
+  });
+
+  $q.all([jobsPromise, resumePromise]).then(function(results) {
+    var jobs = results[0].data;
+    var resume = results[1].data;
+
+    var selectedJobIds = resume.jobs.map(function(jobs) {
+      return jobs.id;
+    });
+
+    $scope.jobs = jobs.map(function(job) {
+      job.selected = selectedJobIds.indexOf(job.id) > -1;
+      return job;
+    });
+  });
+
+  $q.all([educationsPromise, resumePromise]).then(function(results) {
+    var educations = results[0].data;
+    var resume = results[1].data;
+
+    var selectedEducationIds = resume.educations.map(function(educations) {
+      return educations.id;
+    });
+
+    $scope.educations = educations.map(function(education) {
+      education.selected = selectedEducationIds.indexOf(education.id) > -1;
+      return education;
+    });
   });
 
   function findSelectedIds(ary) {

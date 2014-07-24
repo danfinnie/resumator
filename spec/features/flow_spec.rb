@@ -13,6 +13,9 @@ describe "creating a user with a basic profile" do
     And 'I select my jobs, experiences, and metadata'
     Then 'I see an HTML version of my resume'
     And 'I see a PDF version of my resume'
+
+    When 'I reload the page'
+    Then 'My jobs and experiences are still selected'
   end
 
   def i_am_on_the_homepage
@@ -101,4 +104,20 @@ describe "creating a user with a basic profile" do
     expect(pdf_text).to include('Pet dogs')
     expect(pdf_text).to include('Fed dogs')
   end
+
+  def i_reload_the_page
+    visit current_path
+  end
+
+  def my_jobs_and_experiences_are_still_selected
+    within "label", text: "Mind Control at Lehigh University" do
+      expect(page.find('input')).to be_checked
+    end
+
+    within "label", text: "Animal Control Specialist at Department of Control" do
+      expect(page.find('input')).to be_checked
+    end
+  end
+
 end
+
