@@ -1,7 +1,7 @@
 Short Term
 ==========
 
-[ ] Remove fill_in_date if it's not needed anymore
+[X] Remove fill_in_date if it's not needed anymore
 [ ] Refactor job and education to be experiences
 [ ] Rename Job#started and Job#ended to have "_at" suffix
 

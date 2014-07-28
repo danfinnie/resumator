@@ -1,4 +1,3 @@
-require_relative 'helpers/fill_in_date'
 require_relative 'helpers/extract_pdf_text'
 require 'capybara/poltergeist'
 
@@ -10,7 +9,6 @@ end
 Capybara.default_driver = :poltergeist
 
 RSpec.configure do |config|
-  config.include FillInDate
   config.include ExtractPdfText
 
   config.filter_run :focus
