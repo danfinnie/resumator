@@ -3,7 +3,9 @@ Short Term
 
 [X] Remove fill_in_date if it's not needed anymore
 [ ] Refactor job and education to be experiences
-[ ] Rename Job#started and Job#ended to have "_at" suffix
+[X] Rename Job#started and Job#ended to have "_at" suffix
+[ ] Clear add form after saving
+[ ] More visible errors when an erbtext file fails
 
 Long Term
 =========

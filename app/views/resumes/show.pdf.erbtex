@@ -154,7 +154,7 @@ AS3 \textbullet{} iOS \textbullet{} Android \textbullet{} MySQL
   \runsubsection{<%= lesc(job.place) %>}
   \descript{| <%= lesc(job.title) %>}
 
-  \location{<%= job.started.strftime("%B %Y") %> – <%= job.ended.strftime("%B %Y") %> | <%= job.location %>}
+  \location{<%= job.started_at.strftime("%B %Y") %> – <%= job.ended_at.strftime("%B %Y") %> | <%= job.location %>}
   \vspace{\topsep} % Hacky fix for awkward extra vertical space
   <%= Maruku.new(job.description).to_latex.gsub(/itemize/, 'tightitemize') %>
   \sectionspace % Some whitespace after the section

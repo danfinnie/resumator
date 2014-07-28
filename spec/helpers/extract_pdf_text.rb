@@ -4,7 +4,7 @@ module ExtractPdfText
   def extract_pdf_text(pdf_url)
     pdf_text, stderr, status = Open3.capture3("curl '#{pdf_url}' | tee junk/test_output.pdf | pdftotext - -")
 
-    unless status.exitstatus.zero?
+    unless status.exitstatus.try(:zero?)
       raise "Curl or pdftotext failed with code #{status.exitstatus}:\n#{stderr}"
     end
 
