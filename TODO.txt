@@ -1,5 +1,13 @@
-Todo:
+Short Term
+==========
 
-* Import from LinkedIn
-* Better data entry flow
-* Twitter bootstrap?
+[ ] Remove fill_in_date if it's not needed anymore
+[ ] Refactor job and education to be experiences
+[ ] Rename Job#started and Job#ended to have "_at" suffix
+
+Long Term
+=========
+
+[ ] Import from LinkedIn
+[ ] Better data entry flow
+[ ] Twitter bootstrap?

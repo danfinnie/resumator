@@ -1,15 +1,11 @@
 describe "creating a user with a basic profile" do
   it "lets users make HTML and PDF resumes" do
     Given 'I am on the homepage'
-    When 'I make a job about Animal Control'
-    Then 'I see a success message'
-
-    Given 'I am on the homepage'
-    When 'I make an education about Mind Control'
-    Then 'I see a success message'
-
-    Given 'I am on the homepage'
-    When 'I create a resume'
+    And 'I modify my experience'
+    And 'I make a job about Animal Control'
+    And 'I make an education about Mind Control'
+    When 'I am on the homepage'
+    And 'I create a resume'
     And 'I select my jobs, experiences, and metadata'
     Then 'I see an HTML version of my resume'
     And 'I see a PDF version of my resume'
@@ -22,44 +18,48 @@ describe "creating a user with a basic profile" do
     visit '/'
   end
 
-  def i_make_a_job_about_animal_control
-    click_on 'add some of your experience'
-    fill_in_date 'job_started', with: '2010 August 1st'
-    fill_in_date 'job_ended', with: '2011 August 1st'
-    fill_in 'Title', with: 'Animal Control Specialist'
-    fill_in 'Place', with: 'Department of Control'
-    fill_in 'Location', with: 'San Bruno, CA'
-    fill_in 'Description', with: <<-EOT.strip_heredoc
-      * Herded cats
-      * Pet dogs
-      * Fed dogs
-    EOT
-
-    click_on 'Create Job'
+  def i_modify_my_experience
+    click_on 'Edit My Experience'
   end
 
-  def i_see_a_success_message
-    expect(page).to have_content('was successfully created.')
+  def i_make_a_job_about_animal_control
+    within ".jobs" do
+      click_on 'Add'
+      fill_in 'Started', with: '2010-08-01'
+      fill_in 'Ended', with: '2011-08-01'
+      fill_in 'Title', with: 'Animal Control Specialist'
+      fill_in 'Place', with: 'Department of Control'
+      fill_in 'Location', with: 'San Bruno, CA'
+      fill_in 'Description', with: <<-EOT.strip_heredoc
+        * Herded cats
+        * Pet dogs
+        * Fed dogs
+      EOT
+
+      click_on 'Save'
+    end
   end
 
   def i_make_an_education_about_mind_control
-    click_on 'education'
-    fill_in_date 'education_obtained_at', with: 'June 2009'
-    fill_in 'Title', with: 'Mind Control'
-    fill_in 'Place', with: 'Lehigh University'
-    fill_in 'Gpa', with: '3.5'
-    fill_in 'Description', with: <<-EOT.strip_heredoc
-     * The hill
-     * Trained mind rays to influence
-       large animals without exposing
-      rodent-sized creatures to excess
-      radiation
-    EOT
-    click_on 'Create Education'
+    within ".educations" do
+      click_on 'Add'
+      fill_in 'Obtained', with: '2009-06-01'
+      fill_in 'Title', with: 'Mind Control'
+      fill_in 'Place', with: 'Lehigh University'
+      fill_in 'GPA', with: '3.5'
+      fill_in 'Description', with: <<-EOT.strip_heredoc
+       * The hill
+       * Trained mind rays to influence
+         large animals without exposing
+        rodent-sized creatures to excess
+        radiation
+      EOT
+      click_on 'Save'
+    end
   end
 
   def i_create_a_resume
-    click_on 'create a resume'
+    click_on 'Create a Resume'
   end
 
   def i_select_my_jobs_experiences_and_metadata

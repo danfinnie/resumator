@@ -14,6 +14,8 @@ gem 'spring',        group: :development
 gem 'angularjs-rails'
 gem 'rails-latex', github: 'danfinnie/rails-latex', branch: 'both-changes'
 gem 'maruku'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 group :development do
   gem 'cheat'

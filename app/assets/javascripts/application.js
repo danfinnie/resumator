@@ -15,4 +15,5 @@
 //= require angular
 //= require angular-sanitize
 //= require angular_bootstrap
+//= require bootstrap-sprockets
 //= require_tree .
