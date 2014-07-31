@@ -5,7 +5,7 @@ Short Term
 [ ] Refactor job and education to be experiences
 [X] Rename Job#started and Job#ended to have "_at" suffix
 [ ] Clear add form after saving
-[ ] More visible errors when an erbtext file fails
+[X] More visible errors when an erbtext file fails
 
 Long Term
 =========
