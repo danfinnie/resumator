@@ -1,2 +1,2 @@
-class Job < ActiveRecord::Base
+class Job < Experience
 end
