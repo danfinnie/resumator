@@ -1,7 +1,7 @@
 Job.delete_all
 Education.delete_all
 
-Job.create!(started: '05 Nov 2012', ended: '05 Jul 2013', title: "Full Stack Web Developer", place: "Noise New York", location: "New York, NY", description: <<-EOT)
+Job.create!(started_at: '05 Nov 2012', ended_at: '05 Jul 2013', title: "Full Stack Web Developer", place: "Noise New York", location: "New York, NY", description: <<-EOT)
   * Implement browser-based video chatting and appointment scheduling,
   interface with third-party POS system for promotion that increased same-store
   sales by 25% over stores without promotion.
@@ -9,13 +9,13 @@ Job.create!(started: '05 Nov 2012', ended: '05 Jul 2013', title: "Full Stack Web
   support limited-time campaigns.
 EOT
 
-Job.create!(started: '05 Aug 2012', ended: '05 Nov 2013', title: "Backend Developer", place: "Plum Analytics (contract)", location: "Bethlehem, PA", description: <<-EOT)
+Job.create!(started_at: '05 Aug 2012', ended_at: '05 Nov 2013', title: "Backend Developer", place: "Plum Analytics (contract)", location: "Bethlehem, PA", description: <<-EOT)
   * Harvest and crawl 20+ web APIs (REST, data dumps, and screen scraping) in a
   reliable and scalable manner. Merge similar records across data streams and
   transform data to fit internal schemas and classifications.
 EOT
 
-Job.create!(started: '05 Jan 2010', ended: '05 Dec 2012', title: "Web Developer", place: "University's International Multimedia Resource Center", location: "Bethlehem, PA", description: <<-EOT)
+Job.create!(started_at: '05 Jan 2010', ended_at: '05 Dec 2012', title: "Web Developer", place: "University's International Multimedia Resource Center", location: "Bethlehem, PA", description: <<-EOT)
   * Determine needs of web development clients, estimate cost and time to
   completion, delegate work amongst staff.
   * Create web sites for University departments from scratch and using the

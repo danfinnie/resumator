@@ -1,2 +1,2 @@
-class Education < ActiveRecord::Base
+class Education < Experience
 end
