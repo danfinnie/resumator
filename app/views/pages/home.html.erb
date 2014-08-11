@@ -1,15 +1,4 @@
-<h1>Resumator</h1>
-
-<p>This is resumator.</p>
-
-<p><a href="<%= experiences_path %>">Edit My Experience</a></p>
-<p><a href="<%= new_resume_path %>">Create a Resume</a></p>
-
-<h2>Your Resumes</h2>
-<ul>
-  <% @resumes.each do |resume| %>
-    <li>
-      <%= link_to resume.name, resume %>
-    </li>
-  <% end %>
-</ul>
+<center>
+  <%= image_tag 'resume.jpg' %>
+  <p>This is resumator.</p>
+</center>

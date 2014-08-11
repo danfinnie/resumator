@@ -1,0 +1,9 @@
+<p><a href="<%= new_resume_path %>">Create a Resume</a></p>
+<h2>Your Resumes</h2>
+<ul>
+  <% @resumes.each do |resume| %>
+    <li>
+      <%= link_to resume.name, resume %>
+    </li>
+  <% end %>
+</ul>

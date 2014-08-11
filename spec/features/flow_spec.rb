@@ -19,7 +19,7 @@ describe "creating a user with a basic profile" do
   end
 
   def i_modify_my_experience
-    click_on 'Edit My Experience'
+    click_on 'Experiences'
   end
 
   def i_make_a_job_about_animal_control
@@ -57,6 +57,7 @@ describe "creating a user with a basic profile" do
   end
 
   def i_create_a_resume
+    click_on 'Resumes'
     click_on 'Create a Resume'
   end
 
