@@ -3,13 +3,9 @@
 </script>
 
 <div class="row full-size">
-  <div ng-controller="ResumeUpdaterController" class="one third padded">
-    <div class="row">
-      <div class="one half">
-        <h1><input type="text" ng-model="resume.name" ng-change="updateServer()" /></h1>
-      </div>
-    </div>
-    <h1>About you</h1>
+  <div ng-controller="ResumeUpdaterController" class="col-md-4">
+    <input type="text" class="h1" ng-model="resume.name" ng-change="updateServer()" />
+    <h2>About you</h2>
     <ul>
       <li>
       <label>
@@ -42,7 +38,7 @@
       </label>
       </li>
     </ul>
-    <h1>Jobs</h1>
+    <h2>Jobs</h2>
     <ul>
       <li ng-repeat="job in jobs">
       <label>
@@ -52,7 +48,7 @@
       </li>
     </ul>
 
-    <h1>Education</h1>
+    <h2>Education</h2>
     <ul>
       <li ng-repeat="education in educations">
       <label>
@@ -63,7 +59,7 @@
     </ul>
   </div>
 
-  <div ng-controller="ResumeHtmlViewerController" class="one third padded resume-preview">
+  <div ng-controller="ResumeHtmlViewerController" class="col-md-4 resume-preview">
     <h1>Resume</h1>
     <div ng-if='educations.length > 0' class='education'>
       <h2>Education</h2>
@@ -87,7 +83,7 @@
     </div>
   </div>
 
-  <div ng-controller="ResumePdfViewerController" class="one third full-size">
+  <div ng-controller="ResumePdfViewerController" class="col-md-4 full-size">
     <object data="{{ pdfUrl }}" type="application/pdf" class="full-size">
       <embed src="{{ pdfUrl }}" type="application/pdf" class="full-size"/>
     </object>
