@@ -16,10 +16,6 @@ class ResumesController < ApplicationController
     end
   end
 
-  def index
-    @resumes = Resume.all
-  end
-
   def update
     @resume = Resume.find(resume_id)
     @resume.update!(
