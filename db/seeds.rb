@@ -1,5 +1,6 @@
 Job.delete_all
 Education.delete_all
+Resume.delete_all
 
 Job.create!(started_at: '05 Nov 2012', ended_at: '05 Jul 2013', title: "Full Stack Web Developer", place: "Noise New York", location: "New York, NY", description: <<-EOT)
   * Implement browser-based video chatting and appointment scheduling,
@@ -34,3 +35,14 @@ Education.create!(obtained_at: '05 Dec 2012', place: 'Lehigh University', gpa: '
   institutions with business executives and other students, personally
   researched and wrote a competitive analysis and operating plan
 EOT
+
+Resume.create!(
+  name: "My First Resume",
+  last_name: "Radcliffe",
+  first_name: "Chelsea",
+  phone: "514-345-5544",
+  personal_website: "chelsearadcliffe.com",
+  email: "chelsea@gmail.com",
+  experiences: Experience.all
+)
+
