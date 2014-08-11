@@ -51,22 +51,16 @@
 
 \section{Education} 
 
-\subsection{Cornell University}
+<% @resume.educations.each do |education| %>
+  \subsection{<%= lesc(education.place) %>}
 
-\descript{MEng in Computer Science}
-\location{Expected Dec 2014 | Ithaca, NY \\ Cum. GPA: N/A}
+  \descript{<%= lesc(education.title) %>}
+  \location{<%= lesc(education.obtained_at.strftime('%b %Y')) %> | <%= lesc(education.location) %>}
+  <%= Maruku.new(education.description).to_latex %>
+  \location{Cum. GPA: <%= lesc(education.gpa) %>}
 
-\sectionspace % Some whitespace after the section
-
-\descript{BS in Computer Science}
-\location{Expected May 2014 | Ithaca, NY}
-Conc. in Software Engineering \\
-College of Engineering \\
-Dean's List (All Semesters) \\
-\location{ Cum. GPA: 3.92 / 4.0 \\
-Major GPA: 3.94 / 4.0}
-
-\sectionspace % Some whitespace after the section
+  \sectionspace % Some whitespace after the section
+<% end %>
 
 %------------------------------------------------
 

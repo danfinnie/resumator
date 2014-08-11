@@ -7,7 +7,7 @@ module ExtractPdfText
 
     pdf_data = response.read_body
     encoding = response.type_params["charset"]
-    pdf_data.force_encoding(encoding)
+    pdf_data.force_encoding(encoding) if encoding
 
     if response.code.to_i >= 400
       raise "Failure when downloading PDF at #{pdf_url}:\nHTTP #{response.code} #{response.message}\n#{pdf_data}"

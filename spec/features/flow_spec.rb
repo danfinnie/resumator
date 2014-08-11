@@ -46,13 +46,11 @@ describe "creating a user with a basic profile" do
       fill_in 'Obtained', with: '2009-06-01'
       fill_in 'Title', with: 'Mind Control'
       fill_in 'Place', with: 'Lehigh University'
+      fill_in 'Location', with: 'Area 51'
       fill_in 'GPA', with: '3.5'
       fill_in 'Description', with: <<-EOT.strip_heredoc
-       * The hill
-       * Trained mind rays to influence
-         large animals without exposing
-        rodent-sized creatures to excess
-        radiation
+      * List of the Deans
+      * Lehigh Liner
       EOT
       click_on 'Save'
     end
@@ -74,9 +72,10 @@ describe "creating a user with a basic profile" do
 
   def i_see_an_html_version_of_my_resume
     expect(page).to have_css('.resume-preview .education', text: 'Mind Control from Lehigh University (3.5 GPA)')
+    expect(page).to have_css('.resume-preview .education', text: 'Area 51')
     expect(page).to have_css('.resume-preview .education', text: 'June 2009')
-    expect(page).to have_css('.resume-preview .education li', text: 'The hill')
-    expect(page).to have_css('.resume-preview .education li', text: 'Trained mind rays')
+    expect(page).to have_css('.resume-preview .education li', text: 'List of the Deans')
+    expect(page).to have_css('.resume-preview .education li', text: 'Lehigh Liner')
     expect(page).to have_css('.resume-preview .experience', text: 'Animal Control Specialist at Department of Control')
     expect(page).to have_css('.resume-preview .experience', text: 'August 2010')
     expect(page).to have_css('.resume-preview .experience', text: 'August 2011')
@@ -92,10 +91,13 @@ describe "creating a user with a basic profile" do
     expect(pdf_text).to include('Chelsea Radcliffe')
     expect(pdf_text).to include('radcliffe43.geocities.com')
     expect(pdf_text).to include('303-555-6263')
-    # expect(pdf_text).to include('Mind Control from Lehigh University (3.5 GPA)')
-    # expect(pdf_text).to include('June 2009')
-    # expect(pdf_text).to include('The hill')
-    # expect(pdf_text).to include('Trained mind rays')
+    expect(pdf_text).to include('Mind Control')
+    expect(pdf_text).to include('LEHIGH UNIVERSITY')
+    expect(pdf_text).to include('Cum. GPA: 3.5')
+    expect(pdf_text).to include('Area 51')
+    expect(pdf_text).to include('Jun 2009')
+    expect(pdf_text).to include('Lehigh Liner')
+    expect(pdf_text).to include('List of the Deans')
     expect(pdf_text).to include('DEPARTMENT OF CONTROL')
     expect(pdf_text).to include('San Bruno, CA')
     expect(pdf_text).to include('August 2010')

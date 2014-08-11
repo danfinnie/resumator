@@ -1,4 +1,4 @@
-json.extract! education, :id, :obtained_at, :title, :place, :gpa, :created_at, :updated_at
+json.extract! education, :id, :obtained_at, :title, :place, :location, :gpa, :created_at, :updated_at
 json.url education_url(education, format: :json)
 json.description do
   json.markdown education.description

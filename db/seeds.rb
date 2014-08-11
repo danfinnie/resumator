@@ -25,15 +25,10 @@ Job.create!(started_at: '05 Jan 2010', ended_at: '05 Dec 2012', title: "Web Deve
   using LDAP and custom integrations.
 EOT
 
-Education.create!(obtained_at: '05 Dec 2012', place: 'Lehigh University', gpa: '3.7', title: 'Joint B.S. in Computer Science & Business', description: <<-EOT)
-  * Developed long-term mobility strategy for Fortune 500 medical products
-  manufacturer as part of senior project
-  * Determined current IT leaders. levels of investment in utility computing
-  through analysis of financial statements, government filings, and product
-  offerings. Presented findings to project sponsor, a "stealth-mode" startup.
-  * Created a written business loan proposal targeted at area lending
-  institutions with business executives and other students, personally
-  researched and wrote a competitive analysis and operating plan
+Education.create!(obtained_at: '05 Dec 2012', place: 'Lehigh University', location: 'Bethlehem, PA', gpa: '3.7', title: 'Joint B.S. in Computer Science & Business', description: <<-EOT)
+List of the Deans
+
+Lehigh Liner
 EOT
 
 Resume.create!(

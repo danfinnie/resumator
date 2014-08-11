@@ -69,7 +69,10 @@
       <h2>Education</h2>
       <div ng-repeat="education in educations">
         <h3>{{ education.title }} from {{ education.place }} ({{ education.gpa }} GPA)</h3>
-        <h4>{{ education.obtained_at | date:'MMMM yyyy' }}</h4>
+        <div class="row">
+          <h4 class="pull-left">{{ education.obtained_at | date:'MMMM yyyy' }}</h4>
+          <h4 class="pull-right">{{ education.location }}</h4>
+        </div>
         <div ng-bind-html="education.description.html"></div>
       </div>
     </div>
