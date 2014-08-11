@@ -19,7 +19,12 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+<% if Rails.env.test? %>
+\documentclass[letterpaper]{deedy-resume-test} % Use US Letter paper, change to a4paper for A4 
+<% else %>
 \documentclass[letterpaper]{deedy-resume} % Use US Letter paper, change to a4paper for A4 
+<% end %>
+
 
 \begin{document}
 
