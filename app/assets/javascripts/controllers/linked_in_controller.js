@@ -17,6 +17,8 @@ function onLinkedInLogin() {
 }
 
 resumator.controller('LinkedInController', ['$scope', '$http', '$rootScope', '$q', function ($scope, $http, $rootScope, $q) {
+  $scope.test = "hello bob";
+
   var linkedInThings = [
     // 'last-modified-timestamp',
     // 'proposal-comments',

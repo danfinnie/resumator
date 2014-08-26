@@ -82,6 +82,12 @@ GEM
       rspec (>= 2.14, < 4.0)
     hike (1.2.3)
     i18n (0.6.9)
+    jasmine (2.0.2)
+      jasmine-core (~> 2.0.0)
+      phantomjs
+      rack (>= 1.2.1)
+      rake
+    jasmine-core (2.0.2)
     jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -109,6 +115,7 @@ GEM
       mini_portile (= 0.6.0)
     pager (1.0.1)
     pg (0.17.1)
+    phantomjs (1.9.7.1)
     poltergeist (1.5.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -216,6 +223,7 @@ DEPENDENCIES
   guard
   guard-bundler
   guard-rspec
+  jasmine
   jbuilder (~> 2.0)
   jquery-rails
   launchy

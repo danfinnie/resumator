@@ -27,6 +27,7 @@ end
 group :development, :test do
   gem 'pry'
   gem 'launchy'
+  gem 'jasmine'
 end
 
 group :test do
